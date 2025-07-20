@@ -1,0 +1,109 @@
+.root-pane {
+    -fx-background-color: #2b2b2b;
+    -fx-font-family: "Segoe UI", "Helvetica Neue", sans-serif;
+}
+
+.label {
+    -fx-text-fill: #bbbbbb;
+}
+
+.panel-title {
+    -fx-font-size: 1.2em;
+    -fx-font-weight: bold;
+    -fx-text-fill: #e8e8e8;
+    -fx-border-color: transparent transparent #444 transparent;
+    -fx-border-width: 0 0 1 0;
+    -fx-padding: 0 0 5 0;
+}
+
+.button, .toggle-button {
+    -fx-background-color: #3c3f41;
+    -fx-text-fill: #dfdfdf;
+    -fx-border-color: #555555;
+    -fx-border-radius: 4;
+    -fx-background-radius: 4;
+    -fx-padding: 8 15;
+    -fx-font-size: 1em;
+    -fx-cursor: hand;
+}
+
+.button:hover, .toggle-button:hover {
+    -fx-background-color: #4b4e51;
+}
+
+/* Stil for når en toggle-button er valgt (trykket inn) */
+.toggle-button:selected {
+    -fx-background-color: #1e88e5;
+    -fx-text-fill: white;
+    -fx-border-color: #1565c0;
+}
+
+
+.generate-button {
+    -fx-background-color: #1e88e5; /* En fin blåfarge */
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-font-size: 1.2em;
+}
+
+.generate-button:hover {
+    -fx-background-color: #1565c0;
+}
+
+.tree-view {
+    -fx-background-color: #313335;
+    -fx-border-color: #444;
+    -fx-border-radius: 4;
+}
+
+.tree-cell {
+    -fx-background-color: transparent;
+    -fx-text-fill: #bbbbbb;
+    -fx-padding: 5;
+    -fx-font-size: 1.05em;
+}
+
+.tree-cell:filled:hover {
+    -fx-background-color: #3c3f41;
+}
+
+.tree-cell:filled:selected {
+    -fx-background-color: #1e88e5;
+    -fx-text-fill: white;
+}
+
+.progress-bar .bar {
+    -fx-accent: #1e88e5;
+}
+
+.path-label {
+    -fx-text-fill: #888888;
+    -fx-font-style: italic;
+    -fx-padding: 5 0 0 0;
+}
+
+.right-panel {
+    -fx-background-color: #313335;
+    -fx-padding: 15;
+    -fx-background-radius: 6;
+    -fx-border-color: #444;
+    -fx-border-radius: 6;
+}
+
+/* --- NY SEKSJON FOR GRØNNE HAKER --- */
+.check-box-tree-cell > .check-box .box {
+    -fx-background-color: #45494a;
+    -fx-border-color: #666;
+    -fx-border-radius: 3;
+}
+
+/* Når en checkbox er valgt */
+.check-box-tree-cell:selected > .check-box .box {
+    -fx-background-color: #1565c0;
+    -fx-border-color: #fff;
+}
+
+.check-box-tree-cell > .check-box:selected .mark {
+    -fx-background-color: #4CAF50; /* En fin, klar grønnfarge */
+    -fx-shape: "M3.7,11.3c-0.2,0-0.4-0.1-0.5-0.2L0.2,8.1c-0.3-0.3-0.3-0.8,0-1.1s0.8-0.3,1.1,0l2.4,2.4l5.4-5.4c0.3-0.3,0.8-0.3,1.1,0s0.3,0.8,0,1.1L4.2,11.1C4.1,11.2,3.9,11.3,3.7,11.3z";
+}
