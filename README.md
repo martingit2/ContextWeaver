@@ -1,8 +1,8 @@
 # ContextWeaver
 
-**ContextWeaver** er et skrivebordsverktøy utviklet for å drastisk effektivisere arbeidsflyten for **studenter, hobbyister og utviklere** som bruker nettleserbaserte AI-assistenter som ChatGPT, Claude, AI Studio og lignende.
+**ContextWeaver** er et skrivebordsverktøy utviklet for å forenkle og akselerere arbeidsflyten for **studenter, hobbyister og utviklere**. Det er designet for alle som bruker nettleserbaserte AI-modeller som **ChatGPT, Claude eller Gemini** via deres web-grensesnitt eller i online utviklingsplattformer.
 
-Det løser det tidkrevende problemet med å manuelt kopiere og lime inn kode fra flere filer for å gi AI-en nok kontekst.
+Verktøyet løser det tidkrevende problemet med å manuelt samle og lime inn kode fra flere filer for å gi AI-en nok kontekst.
 
 ---
 
@@ -26,7 +26,7 @@ Enten du er **student** som jobber med et skoleprosjekt, en **hobbyist** som utf
 ### Problemet det løser
 Den manuelle prosessen med å åpne hver fil, kopiere innholdet og lime det inn i en prompt er en stor flaskehals. I AI-chatter går man ofte fort tom for "tokens", og kontekstvinduet må fylles på nytt.
 
-I tillegg har mange nettleserbaserte AI-chatter en kritisk begrensning: de aksepterer ikke direkte opplasting av kodefiler. Du kan ofte ikke dra og slippe `.java`, `.ts`, eller `.py`-filer inn i chatten.
+I tillegg har mange av disse nettleserbaserte AI-plattformene en fundamental begrensning: de har kun et **tekstfelt for input**. De aksepterer ikke direkte opplasting eller 'dra-og-slipp' av kodefiler som `.java`, `.ts`, `.py` og lignende.
 
 **ContextWeaver løser dette ved å pakke alt innholdet inn i én enkelt `.txt`-fil.** Siden ren tekst er et universelt format, kan du enkelt kopiere og lime inn hele konteksten i chatten uten problemer med filtype-restriksjoner eller manuell kopiering.
 
@@ -56,7 +56,7 @@ I tillegg har mange nettleserbaserte AI-chatter en kritisk begrensning: de aksep
 
 1.  **Klone repositoriet:**
     ```bash
-    git clone https://github.com/ditt-brukernavn/ContextWeaver.git
+    git clone https://github.com/martingit2/ContextWeaver.git
     cd ContextWeaver
     ```
 2.  **Kjør med Maven:**
