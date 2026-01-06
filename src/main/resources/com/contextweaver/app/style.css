@@ -1,70 +1,119 @@
+/* === Globalt layout / base === */
+
 .root-pane {
-    -fx-background-color: #2b2b2b;
-    -fx-font-family: "Segoe UI", "Helvetica Neue", sans-serif;
+    -fx-background-color: linear-gradient(to bottom, #232629, #1c1e21);
+    -fx-font-family: "Segoe UI", "Helvetica Neue", -apple-system, system-ui, sans-serif;
+    -fx-text-fill: #d4d7dd;
 }
 
+/* Standard label-stil */
 .label {
-    -fx-text-fill: #bbbbbb;
+    -fx-text-fill: #c5c8cc;
+    -fx-font-size: 13px;
 }
 
+/* Toppnivå-titler inne i paneler */
 .panel-title {
-    -fx-font-size: 1.2em;
+    -fx-font-size: 14px;
     -fx-font-weight: bold;
-    -fx-text-fill: #e8e8e8;
-    -fx-border-color: transparent transparent #444 transparent;
+    -fx-text-fill: #f2f3f5;
+    -fx-border-color: transparent transparent #3b3f46 transparent;
     -fx-border-width: 0 0 1 0;
-    -fx-padding: 0 0 5 0;
+    -fx-padding: 0 0 6 0;
 }
+
+/* Beskrivelsestekst under seksjonsoverskrifter */
+.panel-description {
+    -fx-font-size: 12px;
+    -fx-text-fill: #9ea2a8;
+}
+
+/* Hint / tips-tekst */
+.panel-hint {
+    -fx-font-size: 11px;
+    -fx-text-fill: #8c9097;
+    -fx-font-style: italic;
+}
+
+/* --- Buttons / ToggleButtons --- */
 
 .button, .toggle-button {
-    -fx-background-color: #3c3f41;
-    -fx-text-fill: #dfdfdf;
-    -fx-border-color: #555555;
-    -fx-border-radius: 4;
-    -fx-background-radius: 4;
-    -fx-padding: 8 15;
-    -fx-font-size: 1em;
+    -fx-background-color:
+            linear-gradient(to bottom, #3b3f46, #2f3238),
+            linear-gradient(to bottom, #3b3f46, #2f3238);
+    -fx-text-fill: #e3e5ea;
+    -fx-border-color: #50545c;
+    -fx-border-radius: 6;
+    -fx-background-radius: 6;
+    -fx-padding: 8 14;
+    -fx-font-size: 13px;
     -fx-cursor: hand;
+    -fx-focus-color: transparent;
+    -fx-faint-focus-color: transparent;
 }
 
 .button:hover, .toggle-button:hover {
-    -fx-background-color: #4b4e51;
+    -fx-background-color:
+            linear-gradient(to bottom, #474b53, #383c42),
+            linear-gradient(to bottom, #474b53, #383c42);
+    -fx-border-color: #5f646e;
 }
 
-/* Stil for når en toggle-button er valgt (trykket inn) */
+.button:pressed, .toggle-button:pressed {
+    -fx-background-color:
+            linear-gradient(to bottom, #32353b, #282b30),
+            linear-gradient(to bottom, #32353b, #282b30);
+}
+
+/* Stil når toggle-knapp er aktiv */
 .toggle-button:selected {
-    -fx-background-color: #1e88e5;
+    -fx-background-color: linear-gradient(to bottom, #1e88e5, #1565c0);
     -fx-text-fill: white;
-    -fx-border-color: #1565c0;
+    -fx-border-color: #0d47a1;
 }
 
-
+/* Primær action-knapp (Weave Context) */
 .generate-button {
-    -fx-background-color: #1e88e5; /* En fin blåfarge */
+    -fx-background-color: linear-gradient(to bottom, #1e88e5, #1565c0);
     -fx-text-fill: white;
     -fx-font-weight: bold;
-    -fx-font-size: 1.2em;
+    -fx-font-size: 14px;
+    -fx-border-color: #0d47a1;
+    -fx-border-radius: 8;
+    -fx-background-radius: 8;
+    -fx-padding: 10 16;
 }
 
 .generate-button:hover {
-    -fx-background-color: #1565c0;
+    -fx-background-color: linear-gradient(to bottom, #2196f3, #1976d2);
+}
+
+.generate-button:pressed {
+    -fx-background-color: linear-gradient(to bottom, #1565c0, #0d47a1);
+}
+
+/* --- TreeView / filtreet --- */
+
+.file-tree {
+    -fx-background-color: #272a2f;
+    -fx-border-color: #3b3f46;
+    -fx-border-radius: 6;
+    -fx-background-radius: 6;
 }
 
 .tree-view {
-    -fx-background-color: #313335;
-    -fx-border-color: #444;
-    -fx-border-radius: 4;
+    -fx-background-insets: 0;
 }
 
 .tree-cell {
     -fx-background-color: transparent;
-    -fx-text-fill: #bbbbbb;
-    -fx-padding: 5;
-    -fx-font-size: 1.05em;
+    -fx-text-fill: #cfd2d8;
+    -fx-padding: 4 6 4 6;
+    -fx-font-size: 13px;
 }
 
 .tree-cell:filled:hover {
-    -fx-background-color: #3c3f41;
+    -fx-background-color: #343941;
 }
 
 .tree-cell:filled:selected {
@@ -72,38 +121,107 @@
     -fx-text-fill: white;
 }
 
+/* Skillelinjer inni tree / fokusrammer */
+.tree-view:focused .tree-cell:filled:focused {
+    -fx-background-color: #2d323a;
+}
+
+/* --- CheckBoxTreeCell – grønn hake når valgt --- */
+
+.check-box-tree-cell > .check-box .box {
+    -fx-background-color: #3b3f46;
+    -fx-border-color: #5f646e;
+    -fx-border-radius: 3;
+    -fx-background-radius: 3;
+}
+
+/* Når checkbox er “selected” (inni cellen) */
+.check-box-tree-cell > .check-box:selected .box {
+    -fx-background-color: #1565c0;
+    -fx-border-color: #ffffff;
+}
+
+/* Selve haken */
+.check-box-tree-cell > .check-box:selected .mark {
+    -fx-background-color: #4caf50; /* grønn og tydelig */
+    -fx-shape: "M3.7,11.3c-0.2,0-0.4-0.1-0.5-0.2L0.2,8.1c-0.3-0.3-0.3-0.8,0-1.1s0.8-0.3,1.1,0l2.4,2.4l5.4-5.4c0.3-0.3,0.8-0.3,1.1,0s0.3,0.8,0,1.1L4.2,11.1C4.1,11.2,3.9,11.3,3.7,11.3z";
+}
+
+/* --- ProgressBar / status --- */
+
+.progress-bar {
+    -fx-background-color: #2b2f35;
+    -fx-background-radius: 6;
+    -fx-padding: 2;
+}
+
 .progress-bar .bar {
+    -fx-background-insets: 0;
+    -fx-background-radius: 4;
     -fx-accent: #1e88e5;
 }
 
+/* --- Path label (øverst) --- */
+
 .path-label {
-    -fx-text-fill: #888888;
+    -fx-text-fill: #8e939b;
     -fx-font-style: italic;
-    -fx-padding: 5 0 0 0;
+    -fx-font-size: 12px;
+    -fx-padding: 3 0 0 0;
 }
+
+/* --- Høyre panel (hurtigvalg + sammendrag) --- */
 
 .right-panel {
-    -fx-background-color: #313335;
-    -fx-padding: 15;
-    -fx-background-radius: 6;
-    -fx-border-color: #444;
-    -fx-border-radius: 6;
+    -fx-background-color: #262a30;
+    -fx-padding: 14;
+    -fx-background-radius: 10;
+    -fx-border-color: #3b3f46;
+    -fx-border-radius: 10;
+    -fx-effect: dropshadow(two-pass-box, rgba(0,0,0,0.35), 12, 0.0, 0, 0);
 }
 
-/* --- NY SEKSJON FOR GRØNNE HAKER --- */
-.check-box-tree-cell > .check-box .box {
-    -fx-background-color: #45494a;
-    -fx-border-color: #666;
-    -fx-border-radius: 3;
+/* --- Tooltip-stil – litt mer lesbar --- */
+
+.tooltip {
+    -fx-background-color: #2f3339;
+    -fx-text-fill: #e0e3e7;
+    -fx-font-size: 11px;
+    -fx-border-color: #51555d;
+    -fx-border-radius: 4;
+    -fx-background-radius: 4;
+    -fx-padding: 6 8 6 8;
 }
 
-/* Når en checkbox er valgt */
-.check-box-tree-cell:selected > .check-box .box {
-    -fx-background-color: #1565c0;
-    -fx-border-color: #fff;
+/* --- Scrollbars – mer diskrete --- */
+
+.scroll-bar:horizontal, .scroll-bar:vertical {
+    -fx-background-color: transparent;
 }
 
-.check-box-tree-cell > .check-box:selected .mark {
-    -fx-background-color: #4CAF50; /* En fin, klar grønnfarge */
-    -fx-shape: "M3.7,11.3c-0.2,0-0.4-0.1-0.5-0.2L0.2,8.1c-0.3-0.3-0.3-0.8,0-1.1s0.8-0.3,1.1,0l2.4,2.4l5.4-5.4c0.3-0.3,0.8-0.3,1.1,0s0.3,0.8,0,1.1L4.2,11.1C4.1,11.2,3.9,11.3,3.7,11.3z";
+.scroll-bar .track {
+    -fx-background-color: #22252a;
+    -fx-border-color: transparent;
+    -fx-background-radius: 4;
 }
+
+.scroll-bar .thumb {
+    -fx-background-color: #444a54;
+    -fx-background-radius: 4;
+}
+
+.scroll-bar .thumb:hover {
+    -fx-background-color: #555c68;
+}
+
+/* --- Statuslabel nederst --- */
+
+.status-label {
+    -fx-text-fill: #b8bcc3;
+}
+
+/* Hvis du ønsker å bruke egen klasse på statusLabel i Java-koden senere:
+.status-label {
+    -fx-text-fill: #b8bcc3;
+}
+*/
